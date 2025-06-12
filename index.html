@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Effect - iOS 26 Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-title">Liquid Glass Effect</h1>
+                <p class="header-subtitle">iOS 26-inspired glassmorphism with advanced visual effects</p>
+                <button class="theme-toggle btn btn--outline btn--sm" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">Dark Mode</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Glass Element -->
+            <div class="glass-container">
+                <div class="glass-element" id="glassElement">
+                    <div class="glass-content">
+                        <div class="glass-text">Liquid Glass</div>
+                        <div class="glass-subtext">Drag me around</div>
+                    </div>
+                    <div class="glass-distortion"></div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel card">
+                <div class="card__body">
+                    <h3 class="control-title">Customize Effect</h3>
+                    
+                    <!-- Presets -->
+                    <div class="preset-section">
+                        <label class="form-label">Presets</label>
+                        <div class="preset-buttons">
+                            <button class="btn btn--secondary btn--sm preset-btn active" data-preset="iOS 26">iOS 26</button>
+                            <button class="btn btn--secondary btn--sm preset-btn" data-preset="Clean">Clean</button>
+                            <button class="btn btn--secondary btn--sm preset-btn" data-preset="Intense">Intense</button>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="controls-grid">
+                        <div class="control-group">
+                            <label class="form-label" for="blurSlider">
+                                Blur Amount: <span id="blurValue">20</span>px
+                            </label>
+                            <input type="range" id="blurSlider" class="slider" min="0" max="50" value="20">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-label" for="transparencySlider">
+                                Transparency: <span id="transparencyValue">20</span>%
+                            </label>
+                            <input type="range" id="transparencySlider" class="slider" min="5" max="80" value="20">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-label" for="radiusSlider">
+                                Border Radius: <span id="radiusValue">20</span>px
+                            </label>
+                            <input type="range" id="radiusSlider" class="slider" min="0" max="50" value="20">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-label" for="iridescenceSlider">
+                                Iridescence: <span id="iridescenceValue">60</span>%
+                            </label>
+                            <input type="range" id="iridescenceSlider" class="slider" min="0" max="100" value="60">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-label" for="glowSlider">
+                                Glow: <span id="glowValue">30</span>%
+                            </label>
+                            <input type="range" id="glowSlider" class="slider" min="0" max="100" value="30">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-label" for="distortionSlider">
+                                Distortion: <span id="distortionValue">40</span>%
+                            </label>
+                            <input type="range" id="distortionSlider" class="slider" min="0" max="100" value="40">
+                        </div>
+                    </div>
+
+                    <!-- Color Tint -->
+                    <div class="control-group">
+                        <label class="form-label">Color Tint</label>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="rgba(255, 255, 255, 0.1)" style="background: linear-gradient(45deg, #fff, #f0f0f0);"></button>
+                            <button class="color-btn" data-color="rgba(100, 200, 255, 0.15)" style="background: linear-gradient(45deg, #64c8ff, #3b9eff);"></button>
+                            <button class="color-btn" data-color="rgba(255, 100, 150, 0.15)" style="background: linear-gradient(45deg, #ff6496, #ff3d71);"></button>
+                            <button class="color-btn" data-color="rgba(150, 255, 100, 0.15)" style="background: linear-gradient(45deg, #96ff64, #4caf50);"></button>
+                            <button class="color-btn" data-color="rgba(255, 200, 100, 0.15)" style="background: linear-gradient(45deg, #ffc864, #ff9800);"></button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button class="btn btn--primary" id="copyCssBtn">Copy CSS</button>
+                        <button class="btn btn--outline" id="resetBtn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-text">CSS copied to clipboard!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
